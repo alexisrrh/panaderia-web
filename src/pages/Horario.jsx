@@ -1,51 +1,53 @@
-import React from 'react'
+import React from "react";
 
-export const Horario = () => {
+const horarios = [
+  { dia: "Lunes a viernes", hora: "7:00 - 20:00" },
+  { dia: "Sábados", hora: "8:00 - 14:00" },
+  { dia: "Domingos", hora: "Cerrado" },
+];
+
+const Horario = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-25 px-4 w-full">
-      
-      {/* Tarjeta compacta */}
-      <div className="w-full max-w-md bg-white shadow-2xl rounded-3xl overflow-hidden mx-4">
-        
-        {/* Encabezado */}
-        <div className="bg-[#3d2b1f] py-6 text-center text-white">
-          <h2 className="text-2xl font-extrabold tracking-tight uppercase">Nuestro Horario</h2>
-          <p className="text-xs text-yellow-500/80 tracking-[0.3em] uppercase mt-1">Panadería Ipanema</p>
-        </div>
+    <section className="min-h-screen bg-black px-6 pt-32 pb-20 text-white">
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="text-sm uppercase tracking-[0.3em] text-yellow-400">
+          Horarios
+        </p>
 
-        {/* Cuerpo */}
-        <div className="p-6 space-y-5">
-          <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-            <div>
-              <p className="font-bold text-gray-800">Lunes a Viernes</p>
-              <p className="text-xs text-gray-400">Artesanal diario</p>
-            </div>
-            <span className="font-black text-amber-600 bg-amber-50 px-3 py-1 rounded-lg">07:00 - 21:00</span>
+        <h1 className="mt-4 text-4xl font-bold md:text-5xl">
+          Nuestro horario de atención
+        </h1>
+
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          Estamos disponibles para atenderte y preparar tus pedidos en el
+          siguiente horario.
+        </p>
+
+        <div className="mt-12 rounded-3xl border border-white/10 bg-zinc-900 p-8 shadow-2xl">
+          <div className="space-y-4">
+            {horarios.map((item) => (
+              <div
+                key={item.dia}
+                className="flex flex-col items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black px-6 py-5 text-center md:flex-row md:text-left"
+              >
+                <p className="text-xl font-semibold text-white">{item.dia}</p>
+                <p className="text-lg font-medium text-yellow-400">{item.hora}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-            <div>
-              <p className="font-bold text-gray-800">Sábados</p>
-              <p className="text-xs text-gray-400">Especialidad de la casa</p>
-            </div>
-            <span className="font-black text-amber-600 bg-amber-50 px-3 py-1 rounded-lg">08:00 - 20:00</span>
-          </div>
-
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="font-bold text-gray-800">Domingos</p>
-              <p className="text-xs text-gray-400">Horneado matutino</p>
-            </div>
-            <span className="font-black text-amber-600 bg-amber-50 px-3 py-1 rounded-lg">08:00 - 15:00</span>
-          </div>
-        </div>
-
-        {/* Pie */}
-        <div className="bg-gray-50 py-3 text-center">
-          <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">📍 Calle Ipanema, 123</p>
+          <a
+            href="https://wa.me/34600000000"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-block rounded-xl bg-yellow-500 px-6 py-3 font-semibold text-black transition hover:bg-yellow-400"
+          >
+            Hacer un pedido
+          </a>
         </div>
       </div>
-
-    </div>
+    </section>
   );
 };
+
+export default Horario;

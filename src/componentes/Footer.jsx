@@ -1,35 +1,52 @@
-import React from 'react'
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'; // Necesitas instalar react-icons
+import React from "react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-export const Footer = () => {
+const Footer = () => {
   return (
-    <footer className="bg-black/40 text-white/70 py-10 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        {/* Logo o Nombre */}
+    <footer className="border-t border-white/10 bg-black/60 py-10 text-white/70">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
         <div className="text-xl font-serif tracking-widest text-white">
-          IPANEMA <span className="text-xs block text-center md:text-left text-orange-300">DESDE 1900</span>
+          IPANEMA
+          <span className="block text-center text-xs text-yellow-400 md:text-left">
+            DESDE 1900
+          </span>
         </div>
 
-        {/* Copyright */}
-        <div className="text-sm">
+        <div className="text-center text-sm md:text-left">
           © {new Date().getFullYear()} Panadería Ipanema. Todos los derechos reservados.
         </div>
 
-        {/* Redes Sociales */}
-        <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-orange-300 transition-transform hover:scale-125">
-            <FaInstagram size={40} />
+        <div className="flex items-center gap-5">
+          <a
+            href="https://instagram.com/TU_USUARIO"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-transform hover:scale-125 hover:text-yellow-400"
+          >
+            <FaInstagram size={28} />
           </a>
-          <a href="#" className="hover:text-orange-300 transition-transform hover:scale-125">
-            <FaFacebook size={40} />
+
+          <a
+            href="https://facebook.com/TU_PAGINA"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-transform hover:scale-125 hover:text-yellow-400"
+          >
+            <FaFacebook size={28} />
           </a>
-          <a href="#" className="hover:text-orange-300 transition-transform hover:scale-125">
-            <FaWhatsapp size={40} />
+
+          <a
+            href="https://wa.me/34600000000"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-transform hover:scale-125 hover:text-yellow-400"
+          >
+            <FaWhatsapp size={28} />
           </a>
         </div>
-
       </div>
     </footer>
   );
 };
+
+export default Footer;
